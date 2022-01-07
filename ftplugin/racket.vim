@@ -25,7 +25,7 @@ function s:RacketDoc(word) abort
 endfunction
 nnoremap <buffer> <Plug>RacketDoc :call <SID>RacketDoc(expand('<cword>'))<CR>
 if maparg("K", "n") == ""
-  nmap <buffer> K <Plug>RacketDoc
+  nmap <buffer> <f1> <Plug>RacketDoc
 endif
 
 " For the visual mode K mapping, it's slightly more convoluted to get the 
@@ -44,7 +44,7 @@ endfunction
 
 vnoremap <buffer> <Plug>RacketDoc :call <SID>Racket_visual_doc()<cr>
 if maparg("K", "v") == ""
-  vmap <buffer> K <Plug>RacketDoc
+  vmap <buffer> <f1> <Plug>RacketDoc
 endif
 
 "setl commentstring=;;%s
@@ -64,7 +64,7 @@ endif
 let b:undo_ftplugin =
       \  "setl iskeyword< lispwords< lisp< comments< formatoptions<"
       \. "| setl commentstring<"
-      \. "| nunmap <buffer> K"
-      \. "| vunmap <buffer> K"
+      \. "| nunmap <buffer> <f1>"
+      \. "| vunmap <buffer> <f1>"
       \. "| unlet! b:browsefilter"
       \. "| unlet! b:match_words"

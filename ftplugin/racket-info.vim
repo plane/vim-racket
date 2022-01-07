@@ -23,7 +23,7 @@ function s:RacketDoc(word) abort
 endfunction
 nnoremap <buffer> <Plug>RacketDoc :call <SID>RacketDoc(expand('<cword>'))<CR>
 if maparg("K", "n") == ""
-  nmap <buffer> K <Plug>RacketDoc
+  nmap <buffer> <f1> <Plug>RacketDoc
 endif
 
 " For the visual mode K mapping, it's slightly more convoluted to get the
